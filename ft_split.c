@@ -5,68 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 17:38:33 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/06 19:56:24 by hdagdagu         ###   ########.fr       */
+/*   Created: 2022/10/07 16:38:31 by hdagdagu          #+#    #+#             */
+/*   Updated: 2022/10/07 19:52:20 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+char **ft_alloc(const char *tmp_s,const char *s,char **dst,char c)
 {
-    char **dst;
-    const char *tmp_s;
-    int  i;
-    int  j;
-    i = 0;
+    int j;
     j = 0;
-
-    s = ft_strtrim(s,&c);
-    printf("%s\n",s);
-    if(s == 0)
-        return 0;
-    while(s[i])
-    {   if(s[i] == c)
-            j++;
-        i++;
-    }
-    printf("%i",j);
-    dst = (char **)malloc(sizeof(char) * (j + 1));
-    if(dst == 0)
-        return 0;
-    tmp_s = s;
     while(*tmp_s != 0)
     {
-        while(*s != c)
+        while(*s == c)
             s++;
         tmp_s = s;
         while (*tmp_s && *tmp_s != c)
             ++tmp_s;
-        if(*tmp_s == c && s < tmp_s)
+        if(*tmp_s == c || s < tmp_s)
         {
-            *dst = ft_substr(s,0,tmp_s - s);
+            dst[j] = ft_substr(s,0,ft_strlen(s) - ft_strlen(tmp_s));
+                if(dst[j] == 0)
+                    return 0;
             s = tmp_s;
-            dst++;
+            j++;
         }
     }
-    *dst = 0;
     return dst;
- 
 }
-
-int                main(void)
+int ft_count(char const *s, char c)
 {
-    char    **tab;
-    unsigned int    i;
-
+    int  i;
+    int j;
+    j = 0;
     i = 0;
-    tab = ft_split(", h e l l o ", ' ');
-    if (tab[0] == 0)
-        printf("ok\n");
-    while (tab[i] != NULL)
-    {
-        printf("%s",tab[i]);
+    while(s[i])
+    {   if(s[i] == c)
+            j++;
+        while(s[i] == c)
+          i++;
         i++;
     }
+    return j;
+}
+char **ft_split(char const *s, char c)
+{
+   char **dst;
+   const char *tmp_s;
+    int j;
+   s = ft_strtrim(s,&c);
+   tmp_s = ft_strtrim(s,&c);
+    if(s == 0)
+       return 0;
+    j = ft_count(s,c);
+    dst = (char **)ft_calloc(sizeof(char *) ,(j + 2));
+    if(dst == 0)
+        return 0;
+    ft_alloc(tmp_s,s,dst,c);
+    return dst;
 }

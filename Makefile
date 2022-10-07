@@ -6,7 +6,7 @@
 #    By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 12:21:10 by hdagdagu          #+#    #+#              #
-#    Updated: 2022/10/06 11:31:18 by hdagdagu         ###   ########.fr        #
+#    Updated: 2022/10/07 17:12:44 by hdagdagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC =ft_calloc.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
+	ft_atoi.c \
 	
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra

@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:11:59 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/06 11:58:33 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/06 20:43:00 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void ft_putnbr_fd(int n, int fd)
         ft_putchar_fd('-',fd);
         n *= -1;
     }
-    else if(n < 10)
+    if(n < 10)
     {
         if(n == +2147483647)
         {
