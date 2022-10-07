@@ -6,7 +6,7 @@
 #    By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 12:21:10 by hdagdagu          #+#    #+#              #
-#    Updated: 2022/10/07 17:12:44 by hdagdagu         ###   ########.fr        #
+#    Updated: 2022/10/07 21:37:38 by hdagdagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRC =ft_calloc.c \
 	ft_isdigit.c \
 	ft_memchr.c \
 	ft_strchr.c \
+	ft_strrchr.c \
 	ft_strncmp.c \
 	ft_isalnum.c \
 	ft_memcmp.c \
@@ -41,7 +42,7 @@ SRC =ft_calloc.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-	ft_atoi.c \
+	ft_itoa.c \
 	
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
