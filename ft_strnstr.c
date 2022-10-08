@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:43:16 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/04 11:46:20 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/08 15:38:51 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	h = 0;
 	if (needle[0] == '\0')
 		return ((char *)haystack);
+	if(len == 0)
+		return 0;
 	while (haystack[h] != '\0')
 	{
 		n = 0;

@@ -6,13 +6,13 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:11:45 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/07 19:12:23 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:22:49 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_count(long int nb)
+int ft_counte(long int nb)
 {
     int i;
     i = 0;
@@ -32,7 +32,7 @@ char *ft_itoa(int n)
     int len;
     nb = n;
 
-    len = ft_count(nb);
+    len = ft_counte(nb);
     dst = malloc(len +1);
     if(!dst)
         return (0);

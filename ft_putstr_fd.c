@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:00:49 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/07 20:11:18 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/08 13:24:52 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void ft_putstr_fd(char *s, int fd)
 {
+    if(!s)
+        return ;
     while(*s)
         write(fd,s++,1);
 }
