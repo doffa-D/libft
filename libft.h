@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 19:19:24 by hdagdagu          #+#    #+#             */
+/*   Updated: 2022/10/08 20:07:26 by hdagdagu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 #define LIBFT_H
 #include <stdlib.h>
 #include <unistd.h>
-
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
@@ -46,6 +57,15 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t  ft_strlen(const char *str);
 
+typedef struct s_list
+{
+    void *content;
+    struct s_list *next;
+} t_list;
 
+t_list  *ft_lstnew(void *content);
+
+
+void    ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 12:21:10 by hdagdagu          #+#    #+#              #
-#    Updated: 2022/10/08 12:53:58 by hdagdagu         ###   ########.fr        #
+#    Updated: 2022/10/08 20:07:22 by hdagdagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,14 +45,23 @@ SRC =ft_calloc.c \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_striteri.c \
-	
+	ft_lstadd_front.c
+
+
+BONUSSRC = ft_lstnew.c \
+
+
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 OBJ = $(SRC:.c=.o)
+BONUSOBJ = $(BONUSSRC:.c=.o)
 BIN = libft.a
 AR = ar rcs
 
 all: $(BIN)
+
+bonus: $(BONUSOBJ)
+	$(AR) $(BIN) $^
 
 $(BIN): $(OBJ)
 	$(AR) $@ $^
@@ -60,7 +69,7 @@ $(BIN): $(OBJ)
 	$(CC) $(CFLAGS) -c $^ -o $@ 
 
 fclean:
-	rm -rf $(BIN) $(OBJ)
+	rm -rf $(BIN) $(OBJ) $(BONUSOBJ)
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(BONUSOBJ)
 re:fclean $(BIN)
