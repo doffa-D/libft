@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:18:36 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/08 20:05:38 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/09 15:24:28 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 t_list *ft_lstnew(void *content)
 {
-    struct s_list *dest;
+    t_list *dest;
 
-    if (!content)
-        return (0);
     dest = malloc(sizeof(t_list));
     if(!dest)
         return (0);
