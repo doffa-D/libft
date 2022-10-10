@@ -6,7 +6,7 @@
 #    By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 12:21:10 by hdagdagu          #+#    #+#              #
-#    Updated: 2022/10/09 17:04:03 by hdagdagu         ###   ########.fr        #
+#    Updated: 2022/10/10 14:24:12 by hdagdagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,12 +50,13 @@ SRC =ft_calloc.c \
 
 BONUSSRC = ft_lstnew.c \
 		ft_lstadd_front.c \
+		ft_lstsize.c \
 		ft_lstlast.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
-		ft_lstsize.c \
 		ft_lstclear.c \
-		
+		ft_lstiter.c \
+		ft_lstiter.c \
 
 
 CC = gcc

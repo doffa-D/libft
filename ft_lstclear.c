@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:03:34 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/09 17:18:27 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/10 12:05:44 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void ft_lstclear(t_list **lst, void (*del)(void*))
 {
     t_list *ptr;
-    ptr = *lst;
-    if(!del || !ptr)
+    if(!del || !lst)
         return ;
-    while(!ptr)
+    ptr = *lst;
+    while(*lst)
     {
-        (*del)(ptr->content);
-        free(ptr);
+        ptr = (*lst)->next;
+        ft_lstdelone(*lst,del);
+        *lst = ptr;
 
     }
-    *lst = 0;
 }
