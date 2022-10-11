@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:01:37 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/09 16:16:36 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/11 15:23:41 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s1)
 	s = ft_strlen(s1);
 	i = 0;
 	b = malloc(sizeof(char ) * (s + 1));
-	if(!b)
+	if (!b)
 		return (0);
 	while (s1[i] != 0)
 	{

@@ -6,12 +6,12 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:24:50 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/10 17:12:52 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/11 13:07:42 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
     t_list *tmp;
@@ -21,7 +21,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
         
     }
 
-}
+}*/
 
 /*t_list    *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
