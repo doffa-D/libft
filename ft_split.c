@@ -6,15 +6,18 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 16:38:31 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/07 19:52:20 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:46:00 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **ft_alloc(const char *tmp_s,const char *s,char **dst,char c)
+char **ft_alloc(char *s,char **dst,char c)
 {
     int j;
+    char *tmp_s;
+    tmp_s = s;
+    
     j = 0;
     while(*tmp_s != 0)
     {
@@ -34,34 +37,38 @@ char **ft_alloc(const char *tmp_s,const char *s,char **dst,char c)
     }
     return dst;
 }
-int ft_count(char const *s, char c)
+
+int ft_count(const char *s, char c)
 {
-    int  i;
-    int j;
+    int    j;
+    int    i;
+
     j = 0;
     i = 0;
-    while(s[i])
-    {   if(s[i] == c)
-            j++;
-        while(s[i] == c)
-          i++;
-        i++;
+    while (s[i])
+    {
+        while (s[i] && s[i] == c)
+            i++;
+        while (s[i] && s[i] != c)
+        {
+            if (s[i + 1] == c || !s[i + 1])
+                j++;
+            i++;
+        }
     }
-    return j;
+    return (j);
 }
 char **ft_split(char const *s, char c)
 {
-   char **dst;
-   const char *tmp_s;
+    char **dst;
     int j;
-   s = ft_strtrim(s,&c);
-   tmp_s = ft_strtrim(s,&c);
+   
     if(s == 0)
        return 0;
     j = ft_count(s,c);
-    dst = (char **)ft_calloc(sizeof(char *) ,(j + 2));
+    dst = (char **)calloc(sizeof(char *) ,(j + 1));
     if(dst == 0)
         return 0;
-    ft_alloc(tmp_s,s,dst,c);
+    ft_alloc((char *)s,dst,c);
     return dst;
 }

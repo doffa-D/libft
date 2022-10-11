@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 21:19:53 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/02 14:46:12 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:06:47 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return ((char *) &s[i]);
 		i--;
 	}

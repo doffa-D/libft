@@ -6,7 +6,7 @@
 #    By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 12:21:10 by hdagdagu          #+#    #+#              #
-#    Updated: 2022/10/10 14:24:12 by hdagdagu         ###   ########.fr        #
+#    Updated: 2022/10/10 15:24:59 by hdagdagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ BONUSSRC = ft_lstnew.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstiter.c \
+		ft_lstmap.c \
 
 
 CC = gcc

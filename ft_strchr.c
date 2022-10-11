@@ -6,7 +6,7 @@
 /*   By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:58:59 by hdagdagu          #+#    #+#             */
-/*   Updated: 2022/10/05 22:15:11 by hdagdagu         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:06:16 by hdagdagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i] != 0 && c != s[i])
+	while (s[i] != 0 && (unsigned char)c != s[i])
 		i++;
-	if (s[i] == c)
+	if (s[i] == (unsigned char)c)
 		return ((char *) &s[i]);
 	return (0);
 }
