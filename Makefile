@@ -6,7 +6,7 @@
 #    By: hdagdagu <hdagdagu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 12:21:10 by hdagdagu          #+#    #+#              #
-#    Updated: 2022/10/11 13:07:22 by hdagdagu         ###   ########.fr        #
+#    Updated: 2022/10/13 22:47:39 by hdagdagu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,21 +64,21 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 OBJ = $(SRC:.c=.o)
 BONUSOBJ = $(BONUSSRC:.c=.o)
-BIN = libft.a
+NAME = libft.a
 AR = ar rcs
 
-all: $(BIN)
+all: $(NAME)
 
 bonus: $(BONUSOBJ)
-	$(AR) $(BIN) $^
+	$(AR) $(NAME) $^
 
-$(BIN): $(OBJ)
+$(NAME): $(OBJ)
 	$(AR) $@ $^
 %.o:%.c
 	$(CC) $(CFLAGS) -c $^ -o $@ 
 
 fclean:
-	rm -rf $(BIN) $(OBJ) $(BONUSOBJ)
+	rm -rf $(NAME) $(OBJ) $(BONUSOBJ)
 clean:
 	rm -rf $(OBJ) $(BONUSOBJ)
-re:fclean $(BIN)
+re:fclean $(NAME)
